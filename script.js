@@ -92,3 +92,23 @@ const footer = document.querySelector("footer p");
 if(footer){
 footer.innerHTML = "© " + year + " Education Hub";
 }
+const slides = document.querySelector(".slides");
+const slide = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+let current = 0;
+
+function showSlide(index){
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+setInterval(() => {
+    current++;
+    if(current >= slide.length){
+        current = 0;
+    }
+    showSlide(current);
+}, 3000);
