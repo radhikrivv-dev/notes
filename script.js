@@ -112,3 +112,29 @@ setInterval(() => {
     }
     showSlide(current);
 }, 3000);
+
+// Touch swipe support
+let startX = 0;
+let endX = 0;
+
+const slider = document.querySelector(".slider");
+
+slider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", () => {
+
+    if (startX - endX > 50) {
+        nextSlide();   // Swipe left
+    }
+
+    if (endX - startX > 50) {
+        prevSlide();   // Swipe right
+    }
+
+});
