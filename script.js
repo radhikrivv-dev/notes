@@ -104,14 +104,24 @@ function showSlide(index){
     dots.forEach(d => d.classList.remove("active"));
     dots[index].classList.add("active");
 }
-
-setInterval(() => {
+function nextSlide() {
     current++;
-    if(current >= slide.length){
+    if (current >= slide.length) {
         current = 0;
     }
     showSlide(current);
-}, 3000);
+}
+
+function prevSlide() {
+    current--;
+    if (current < 0) {
+        current = slide.length - 1;
+    }
+    showSlide(current);
+}
+
+
+setInterval(nextSlide, 3000);
 
 // Touch swipe support
 let startX = 0;
