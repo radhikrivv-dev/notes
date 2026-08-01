@@ -2,7 +2,8 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const pdfFile = urlParams.get("file");
-
+const title = pdfFile.replace(".pdf", "").replace(/_/g, " ");
+document.getElementById("pdfTitle").innerHTML = "📖 " + title + " Notes";
 const pdfUrl = "pdf/" + pdfFile;
 
 let pdfDoc = null;
