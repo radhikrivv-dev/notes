@@ -363,3 +363,25 @@ font-size:20px;
 .news-card button:hover{
     transform:scale(1.05);
     }
+.page-navigation{
+    text-align:center;
+    margin:40px 0;
+}
+
+.next-btn{
+    background:#1565C0;
+    color:#fff;
+    border:none;
+    padding:15px 35px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.next-btn:hover{
+    background:#0d47a1;
+    transform:translateY(-2px);
+}
